@@ -52,8 +52,8 @@ function SidebarChat({ dataList, title, path, fetchList}) {
         if (dataList) {
             const arr = [];
             dataList.forEach(data => {
-                console.log("data: ", data);
-                console.log("rooms data: ", roomsData[data.id]);
+           //     console.log("data: ", data);
+          //      console.log("rooms data: ", roomsData[data.id]);
                 if (data) {
                     const onlineState = roomsData[data.id]?.onlineState ? roomsData[data.id].onlineState : data.state;
                     const lastMessage = title === "Search Result" ? null : roomsData[data.id]?.lastMessage ? roomsData[data.id].lastMessage : data.lastMessage;
@@ -63,6 +63,8 @@ function SidebarChat({ dataList, title, path, fetchList}) {
                             state: {
                                 photoURL: `${data.photoURL ? data.photoURL : `https://avatars.dicebear.com/api/human/${data.id}.svg`}`,
                                 name: data.name,
+                                about: data.about,
+                                phone: data.phone,
                                 userID: data.userID ? data.userID : null,
                                 state: data.state
                             }
@@ -70,7 +72,7 @@ function SidebarChat({ dataList, title, path, fetchList}) {
                             <div 
                                 className={`sidebar__chat animate`}
                             >
-                                <p > sidebarchat.js animate</p>
+                              {/*  <p > sidebarchat.js animate</p>*/}
                                 <div className="avatar__container">
                                     <Avatar style={{width: 45,height: 45}} src={`${data.photoURL ? data.photoURL : `https://avatars.dicebear.com/api/human/${data.id}.svg`}`} />
                                     {onlineState=== "online" ? <div className="online"></div> : null}
@@ -83,13 +85,19 @@ function SidebarChat({ dataList, title, path, fetchList}) {
                                             marginBottom: lastMessage?.message || lastMessage ? 8 : 0,
                                         }}
                                     ></h2>
-                                    <p style={{width: page.width <= 760 ? page.width - 126 : page.width * 0.315 - 126}}>
+                                    <p style={{width: page.width <= 760 ? page.width - 126 : page.width * 0.315 - 126}}
+                                    dangerouslySetInnerHTML={{__html:  data.about}}
+                                    >
+                                    </p>
+                                    <p style={{width: page.width <= 760 ? page.width - 126 : page.width * 0.315 - 126}}
+                                   
+                                    >
                                         {lastMessage?.message ? 
-                                            <><Photo style={{width: 19,height: 19}} /> <span style={{width: page.width <= 760 ? page.width - 150 : page.width * 0.315 - 150}}>{lastMessage.message}</span> </>
+                                            <><Photo style={{width: 19,height: 19}} /> <span style={{width: page.width <= 160 ? page.width - 150 : page.width * 0.315 - 150}}>{lastMessage.message}</span> </>
                                             : lastMessage?.audio ?
-                                            <><MicRounded style={{width: 19,height: 19}} /><span style={{width: page.width <= 760 ? page.width - 150 : page.width * 0.315 - 150}}>{lastMessage.time}</span></>
+                                            <><MicRounded style={{width: 19,height: 19}} /><span style={{width: page.width <= 160 ? page.width - 150 : page.width * 0.315 - 150}}>{lastMessage.time}</span></>
                                             : lastMessage?.message === "" ?
-                                            <><Photo style={{width: 19,height: 19}} /> <span style={{width: page.width <= 760 ? page.width - 150 : page.width * 0.315 - 150}}>Photo</span> </>
+                                            <><Photo style={{width: 19,height: 19}} /> <span style={{width: page.width <= 160 ? page.width - 150 : page.width * 0.315 - 150}}>Photo</span> </>
                                         :lastMessage}
                                     </p>
                                 </div>
@@ -112,7 +120,7 @@ function SidebarChat({ dataList, title, path, fetchList}) {
     }, [dataList, roomsData, page, pathID]);
 
     useEffect(() => {
-        if (page.width <= 760) {
+        if (page.width <= 160) {
             dispatch({type: "SET_PATH", path: path});
         } else {
             dispatch({type: "SET_PATH", path: ""})
@@ -121,7 +129,7 @@ function SidebarChat({ dataList, title, path, fetchList}) {
 
     return (
         <div ref={sidebarChatContainer} className="sidebar__chat--container">
-             <p>SidebarChat.js</p>
+            {/* <p>SidebarChat.js</p>*/}
             <h2 className="animate">{title} </h2>
             {dataList?.length > 0 ? list : dataList === null && title !== "Chats" ?
                 <div className="loader__container sidebar__loader">
@@ -135,7 +143,7 @@ function SidebarChat({ dataList, title, path, fetchList}) {
                             <CancelOutlined />
                         </div>
                     </div>
-                    <h2>Не {title} найдено </h2>
+                    <h2> {title} не найдено </h2>
                 </div>
                 
             }

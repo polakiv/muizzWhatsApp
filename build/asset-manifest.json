@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.37287649.chunk.css",
+    "main.js": "/static/js/main.4bcf563f.chunk.js",
+    "main.js.map": "/static/js/main.4bcf563f.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.534939eb.js",
+    "runtime-main.js.map": "/static/js/runtime-main.534939eb.js.map",
+    "static/js/2.ba6e5d11.chunk.js": "/static/js/2.ba6e5d11.chunk.js",
+    "static/js/2.ba6e5d11.chunk.js.map": "/static/js/2.ba6e5d11.chunk.js.map",
+    "static/js/3.05ba9830.chunk.js": "/static/js/3.05ba9830.chunk.js",
+    "static/js/3.05ba9830.chunk.js.map": "/static/js/3.05ba9830.chunk.js.map",
+    "static/js/4.77f6baf9.chunk.js": "/static/js/4.77f6baf9.chunk.js",
+    "static/js/4.77f6baf9.chunk.js.map": "/static/js/4.77f6baf9.chunk.js.map",
+    "index.html": "/index.html",
+    "service-worker.js": "/service-worker.js",
+    "service-worker.js.map": "/service-worker.js.map",
+    "static/css/main.37287649.chunk.css.map": "/static/css/main.37287649.chunk.css.map",
+    "static/js/2.ba6e5d11.chunk.js.LICENSE.txt": "/static/js/2.ba6e5d11.chunk.js.LICENSE.txt",
+    "static/media/Chat.css": "/static/media/1618826508_37-phonoteka_org-p-fon-mashinki-detskie-50.482ea3d2.jpg",
+    "static/media/message_received.7170470c.mp3": "/static/media/message_received.7170470c.mp3",
+    "static/media/message_sent.3957aabd.mp3": "/static/media/message_sent.3957aabd.mp3",
+    "static/media/notification.34e1d6f8.mp3": "/static/media/notification.34e1d6f8.mp3",
+    "static/media/tablets.13043575.png": "/static/media/tablets.13043575.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.534939eb.js",
+    "static/js/2.ba6e5d11.chunk.js",
+    "static/css/main.37287649.chunk.css",
+    "static/js/main.4bcf563f.chunk.js"
+  ]
+}

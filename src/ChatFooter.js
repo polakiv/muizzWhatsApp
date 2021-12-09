@@ -154,7 +154,7 @@ export default memo(function ChatFooter({input, handleFocus, change, sendMessage
 				});
 			};
 		} else {
-			alert("No access to internet !!!");
+			alert("Нет подключения к интернету!");
 		}
 	};
 
@@ -210,8 +210,8 @@ export default memo(function ChatFooter({input, handleFocus, change, sendMessage
 	</>;
 
 	return (
-		<div className="chat__footer" onBlur={handleBlur} >
-			 <p>ChatFooter.js</p>
+		<div className="chat__footer" onBlur={handleBlur} > 
+			   {/* <p>ChatFooter.js</p>*/}
 	        <form>
 	            <input
 	            	ref={inputRef}
@@ -220,12 +220,12 @@ export default memo(function ChatFooter({input, handleFocus, change, sendMessage
 	                onChange={!recording ? change : null}
 	                onKeyPress={recording ? () => false : null}
 	                onFocus={() => setFocus(true)}
-	                placeholder="Type a message"
+	                placeholder="Пишите"
 	            />
 	            {navigator.mediaDevices.getUserMedia && window.MediaRecorder ?
 	            	<button 
 		            	type="submit" 
-		            	class="send__btn" 
+		            	className="send__btn" 
 		            	onClick={input !== "" || (input === "" && image) ? sendMessage : startRecording}
 		            >
 		                {btnIcons}
@@ -234,7 +234,7 @@ export default memo(function ChatFooter({input, handleFocus, change, sendMessage
 		        	<>
 		        		<label
 			        		for="capture"  
-			            	class="send__btn" 
+			            	className="send__btn" 
 			            >
 			                {btnIcons}
 			            </label> 
